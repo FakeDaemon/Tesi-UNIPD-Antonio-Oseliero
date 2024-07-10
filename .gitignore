@@ -2,7 +2,7 @@
 minted-caches/
 
 # file
-.DS_Store
+*.DS_Store
 *.xmpi
 *.acn
 *.aux
@@ -17,7 +17,6 @@ minted-caches/
 *.lof
 *.log
 *.lot
-*.pdf
 *.run.xml
 *.synctex.gz
 *.toc
