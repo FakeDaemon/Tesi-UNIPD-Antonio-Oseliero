@@ -1,3 +1,7 @@
+# directory
+minted-caches/
+
+# file
 .DS_Store
 .xmpi
 .acn
