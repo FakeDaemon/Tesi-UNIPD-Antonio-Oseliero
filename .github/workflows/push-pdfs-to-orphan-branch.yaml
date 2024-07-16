@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
       - name: Checkout orphan branch
         run: |
           git fetch origin Pdf
@@ -21,11 +26,11 @@ jobs:
       - name: Copy PDFs from main
         run: |
           git checkout main -- '*.pdf'
-      
-      - name: Commit PDFs
+
+      - name: Add and commit PDFs
         run: |
           git add *.pdf
-          git commit -m "Update PDFs from main branch"
+          git commit -m "Update PDFs from main branch" || echo "No changes to commit"
 
       - name: Push to orphan branch
         env:
