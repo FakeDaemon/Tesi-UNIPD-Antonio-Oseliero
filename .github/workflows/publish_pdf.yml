@@ -22,8 +22,8 @@ jobs:
 
       - name: Checkout orphan branch
         run: |
-          git fetch origin Pdf
-          git checkout Pdf
+          git fetch origin pdf
+          git checkout pdf
 
       - name: Copy PDFs from main
         run: |
@@ -38,4 +38,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin Pdf
+          git push origin pdf
