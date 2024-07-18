@@ -1,0 +1,27 @@
+# directory
+minted-caches/
+
+# file
+*.DS_Store
+*.xmpi
+*.acn
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glo
+*.glsdefs
+*.ist
+*.lof
+*.log
+*.lot
+*.run.xml
+*.synctex.gz
+*.toc
+*.lol
+*.gls
+*.glg
+*.alg
+*.acr
