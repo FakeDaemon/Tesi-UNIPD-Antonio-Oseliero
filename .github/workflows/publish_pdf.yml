@@ -28,7 +28,7 @@ jobs:
       - name: Copy PDFs from main
         run: |
           git checkout main -- '*.pdf'
-          find . -name '*.pdf' -exec cp {} . \;
+          find . -name '*.pdf' -exec mv {} . \;
 
       - name: Add and commit PDFs
         run: |
