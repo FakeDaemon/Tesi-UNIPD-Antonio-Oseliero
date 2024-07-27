@@ -1,4 +1,11 @@
 \section{Clienti e servizi}
+{\company} ha come clienti piccole e medie imprese situate in prevalenza in Veneto, Emilia-Romagna e in generale nel Nord Italia, possiamo trovare però 
+anche clienti dal Centro Italia e dalla Sardegna. \\
+Il gestionale che propone può adattarsi a qualsiasi tipo di azienda indipendentemente dal settore in cui 
+operi (anche se come vedremo vengono venduti dei gestionali ad hoc per i settori: \textbf{petrolifero, ittico, assistenza post-vendita, ortofrutticolo, antincendi 
+e antinfortunistica, trasporti}).\\ Una volta implementato il gestionale all'interno dell'azienda del cliente viene offerta una formazione all'utilizzo del 
+\textit{software} per i dipendenti, che parteciperanno a delle riunioni tenute da un consulente tecnico che ne illustrerà le funzionalità e insegnerà come sfruttarle 
+al meglio.\\
 {\company} propone due linee di prodotti principali: \textbf{Vision} e \textbf{MoviDAT}.
 La prima, Vision, è la linea di gestionali dell'azienda, con VisionENTERPRISE, che è il loro \gls{erp} di punta, 
 e poi una serie di soluzioni verticali per venire incontro alle specifiche esigenze delle varie aziende con cui {\company} opera.
@@ -22,7 +29,7 @@ funzionalità specifiche per adattarsi a specifici settori. In particolare quind
       come la possibilità di gestire \textbf{listini, anagrafiche, dotazioni, manutenzione, pianificazione viaggi}, ecc.
 \end{itemize}
 Nella linea di prodotti MoviDAT invece troviamo una gamma di applicazioni sviluppate per i principali sistemi operativi per dispositivi 
-\textit{mobile}: \gls{android} e \gls{ios}. Queste applicazioni sono state sviluppate per integrarsi direttamente con i gestionali 
+\textit{mobile}: Android e iOS. Queste applicazioni sono state sviluppate per integrarsi direttamente con i gestionali 
 della linea Vision e permettono di semplificare il lavoro di dipendenti che operano in mobilità e non hanno a disposizione un 
 \textit{computer} con cui lavorare durante le trasferte (ed anche se ce lo avessero il suo utilizzo risulterebbe scomodo).\\
 In questa linea dunque troviamo:
@@ -30,22 +37,27 @@ In questa linea dunque troviamo:
     \item \textbf{MoviDOC} è un \gls{webapp} (ovvero un app a cui è possibile accedere direttamente da \textit{browser} senza 
           necessità di installarla sul dispositivo) che consente la gestione e condivisone dei documenti;
     \item \textbf{Handy} è un app per palmare che integrata a VisionENTERPRISE supporta la movimentazione della merce del magazzino o del punto vendita;
-    \item \textbf{MoviSELL} è un app sviluppata per tablet \gls{ios} dedicata agli agenti aziendali, permette di: \textbf{visualizzare i 
+    \item \textbf{MoviSELL} è un app sviluppata per tablet iOS dedicata agli agenti aziendali, permette di: \textbf{visualizzare i 
           clienti su una mappa}, avere visibilità dello \textbf{stato contabile} e \textbf{inserire ordini clienti direttamente nel 
           ciclo attivo dell'azienda}.
-    \item \textbf{MoviREP} è un app sviluppata per tablet \gls{ios} per la gestione digitalizzata dei rapportini da parte di operatori addetti alla manutenzione o 
+    \item \textbf{MoviREP} è un app sviluppata per tablet iOS per la gestione digitalizzata dei rapportini da parte di operatori addetti alla manutenzione o 
           all'assistenza post vendita. 
     \item \textbf{MoviALERT} è una \gls{webapp} che permette di inviare mail di notifica automatiche all'avvenire di 
           specifici eventi nel gestionale;
-    \item \textbf{MoviCHECK} è un \gls{webapp}, scaricabile anche su dispositivi \gls{android} e \gls{ios} per 
+    \item \textbf{MoviCHECK} è un \gls{webapp}, scaricabile anche su dispositivi Android e iOS per 
           consultare i dati di business in mobilità;
-    \item \textbf{MoviEXPENSE} è un app per \gls{android} e \gls{ios}, per la registrazione automatica delle note 
+    \item \textbf{MoviEXPENSE} è un app per Android e iOS, per la registrazione automatica delle note 
           spese;
     \item \textbf{MoviCHECKIN} è una \gls{webapp} per la registrazione dei visitatori in azienda;
-    \item \textbf{MoviORDER} applicazione per \textit{smartphone e tablet} \gls{ios} e \gls{android} che l’azienda può fornire ai propri clienti per l’invio di ordini e 
+    \item \textbf{MoviORDER} applicazione per \textit{smartphone e tablet} iOS e Android che l’azienda può fornire ai propri clienti per l’invio di ordini e 
           richieste di approvvigionamento.
 \end{itemize}
-{\company} inoltre può, qualora ve ne sia necessità, realizzare versioni specifiche dei suoi \textit{software} per soddisfare specifiche necessità 
-del cliente.
+
+Nel caso in cui un'azienda richieda funzionalità specifiche per uno dei \textit{software} sopra elencati, {\company} offre la possibilità di creare una versione 
+modificata dei propri prodotti. Per evitare di avere troppe variazioni della stesso prodotto il codice delle personalizzazioni (così vengono chiamate le funzioni in 
+più richieste dal cliente) vengono inserite direttamente nel codice del \textit{software} principale, e "attivate" da specifici parametri controllati all'avvio del 
+sistema. Nel caso di MoviORDER, che ho avuto la possibilità di esaminare per questo progetto, a seconda del valore del campo \textit{Company} ottenuto a seguito dell'
+autenticazione del cliente venivano apportate alcune variazioni grafiche (loghi, tema). Questo si può ottenere grazie ad un'attenta progettazione e appropriate scelte 
+architetturali.
 
  
