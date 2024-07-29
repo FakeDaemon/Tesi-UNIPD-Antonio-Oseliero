@@ -1,4 +1,5 @@
 \section{Tecnologie}\label{chap:Tecnologie}
+\subsection{Elenco delle tecnologie utilizzate}
 L'azienda utilizza diversi strumenti sia per lo sviluppo, che per lo svolgimento dei normali processi aziendali.
 \begin{itemize}
     \item \textbf{Portatili}: ad ogni impiegato viene messo a disposizione un portatile con Windows 10 o 11, il sistema 
@@ -10,20 +11,11 @@ L'azienda utilizza diversi strumenti sia per lo sviluppo, che per lo svolgimento
           con Outlook;
     \item \textbf{Bitbucket}: strumento per la gestione della versione Git basato sul \textit{web}, che consente di creare 
           \textit{repository} pubbliche o private per caricare il proprio codice e gestirlo in modo collaborativo con il proprio 
-          \textit{team}. Qui gli sviluppatori caricano il loro codice suddiviso in \textit{repository} per ogni progetto. Ogni \textit{repository} vede diversi 
-          \textit{branch} attivi: \textbf{\textit{main}} che contiene l'ultima versione rilasciata al pubblico del software, \textbf{\textit{develop}} ovvero il 
-          \textit{branch} di lavoro dove nascono e confluiscono tutti i \textit{feature branch} prima di effettuare il rilascio in \textit{main}, i 
-          \textbf{\textit{feature branch}} che viene creato dal programmatore per sviluppare una specifica funzione del programma che sarà, una volta terminata e
-          testata, aggiunta in \textit{develop};
+          \textit{team};
     \item \textbf{Jira}: \textit{suite} di \textit{software} proprietari per il tracciamento delle segnalazioni sviluppato
-           da Atlassian, che consente il \textit{bug tracking} e la gestione dei progetti. Questo software è particolarmente utile per pianificare i vari 
-           compiti da svolgere nello \textit{sprint} e assegnarli ai vari componenti del \textit{team} di sviluppatori. Questi compiti sono chiamati \textit{ticket}
-           e possono essere di diverso tipo: \textbf{\textit{epic}} che rappresentano grosse porzioni di lavoro e sono quindi usate come raccolte di \textit{ticket},
-           \textbf{\textit{task}} il singolo compito che deve essere completato e \textbf{\textit{bug}} che rappresenta una problematica da risolvere.
-           I \textbf{\textit{bug}} possono essere avere diverse origini: gli sviluppatori stessi nel caso in cui si accorgano di un difetto di programmazione o da i 
-           clienti che telefonando all'assistenza riportano il problema, quindi il tecnico riporterà la problematica al \textit{project manager} che creerà la \textit{task};
-    \item \textbf{Confluence}: strumento che permette ai \textit{team} di creare, condividere e collaborare su documenti e contenuti in un ambiente 
-          centralizzato e strutturato;
+           da Atlassian, che consente il \textit{bug tracking} e la gestione dei progetti;
+    \item \textbf{Confluence}: strumento che permette ai \textit{team} di condividere e organizzare documenti e contenuti 
+          in un ambiente centralizzato e strutturato;
     \item \textbf{3CX}: centralino telefonico PBX (\textit{Private Branch Exchange}), ovvero una rete telefonica privata utilizzata all'interno di un'azienda 
           o organizzazione. Gli utenti del sistema telefonico PBX possono comunicare internamente ed esternamente, tramite il classico telefono fisso o 
           chat da \textit{smartphone}. Questo sistema permette anche di effettuare video chiamate e di scambiarsi messaggi all'interno di \textit{chat};
@@ -47,4 +39,73 @@ più approfonditamente nel capitolo TODO 2.4.1) queste sono alcune delle tecnolo
           Blazor e MAUI. Queste librerie sono supportate per lo sviluppo in React, Angular e Vue;
     \item \textbf{FoxPro}: un sistema di gestione di \textit{database} e un linguaggio di programmazione procedurale orientato agli oggetti. Originariamente sviluppato 
           da Fox Software e successivamente acquisito da Microsoft. 
+\end{itemize}
+\subsection{Integrazione delle tecnologie con i processi aziendali}
+\begin{figure}[H]
+      \centering
+      \includegraphics[alt={metodologie e tecnologie}, width=\textwidth]{img/integrazione metodologie strumenti.png}
+      \caption[Integrazione metodologie e tecnologie]
+              {Integrazione metodologie e tecnologie.}
+      \label{fig:integrazione tecnologie e metodologie}
+  \end{figure}
+Come mostrato in figura \ref{fig:integrazione tecnologie e metodologie} l'applicazione del \textit{framework} Scrum richiede 
+l'impiego di diverse tecnologie:
+\begin{itemize}
+      \item \textbf{Documentazione}: a seguito dei \textit{meeting} aziendali viene prodotto un documento che può 
+            avere diverse finalità: trascrivere gli \textbf{argomenti dell'incontro}, le \textbf{difficoltà incontrate e le soluzioni da 
+            applicare per correggerle} o \textbf{semplici appunti}. Gli sviluppatori usano quindi Word per redarre la documentazione 
+            data la sua estrema semplicità e la velocità con la quale si possono produrre tali documenti;
+      \item \textbf{Archiviazione di documenti}: eccezion fatta per gli appunti personali, la documentazione richiede di 
+            essere condivisa e organizzata. Nonostante in {\company} esista una serie di cartelle di rete accedibili tramite 
+            il \textit{file manager} di Windows, questa soluzione risulta inadeguata allo scopo in quanto povera di funzionalità 
+            e personalizzazioni. Confluence permette non solo di organizzare la documentazione in una serie di \textit{directory 
+            online} in modo da rendere i documenti sempre consultabili, ma permette anche di definire una serie di privilegi per 
+            consentire o meno l'accesso alla documentazione.
+      \item \textbf{Comunicazione}: 3CX agisce come canale di comunicazione per la maggior parte delle comunicazioni interne. 
+            È il luogo dove si svolgono i \textit{meeting}, fondamentali per mantenere il \textit{team} coordinato, ma permette 
+            anche di effettuare chiamate e scrivere in \textit{chat} confinando la maggior parte delle comunicazioni in un unico 
+            luogo. Ovviamente anche le \textit{mail} sono un valido strumento di comunicazione, ed infatti viene usato Zimbra 
+            per comunicare con persone esterne all'azienda o per alcune mail interne (\textbf{comunicazioni di servizio, 
+            \textit{reminder}}, ecc.). Quindi 3CX viene usato maggiormente per i \textit{meeting} o per un tipo di 
+            comunicazione veloce ed informale, mentre il servizio di posta elettronica viene usato principalmente 
+            per comunicazione con persone esterne all'azienda. Ovviamente i clienti che hanno necessità di assistenza 
+            possono chiamare l'assistenza tramite il numero di telefono che viene loro fornito per mettersi in contato con 
+            uno dei tecnici del reparto assistenza;
+      \item \textbf{Sviluppo}: Per quanto riguarda lo sviluppo gli strumenti utilizzati e le tecnologie impiegate variano 
+            a seconda del progetto a cui lo sviluppatore sta lavorando o da preferenze personali (come nel caso del 
+            sistema operativo utilizzato nel proprio \textit{computer}). Anche per quanto riguarda l'editor viene lasciata 
+            libertà di scelta, personalmente per lo sviluppo di API in .NET (le tecnologie che ho impiegato per lo sviluppo del 
+            progetto verranno discusse in un capitolo a parte TODO 3.1) ho preferito utilizzare Visual Studio perché offre 
+            molti strumenti di supporto e \textit{debug} integrati. Per quanto riguarda lo sviluppo del \textit{frontend} ho 
+            preferito utilizzare Visual Studio Code perché più leggero, personalizzabile.
+      \item \textbf{Testing}: anche qui gli strumenti utilizzati dipendono dal progetto che si sta sviluppando. Nel mio 
+            caso ho utilizzato uno \textit{smartphone e tablet} Android per testare l'applicazione nel suo insieme e la 
+            piattaforma Swagger per testare manualmente le API (le tecnologie che ho impiegato per lo sviluppo del 
+            progetto verranno discusse in un capitolo a parte TODO 3.1, mentre per la descrizione accurata di come ho 
+            effettuato il testing del codice consultare il capitolo TODO 3.6). Riporto per completezza che per 
+            quanto riguarda il \textit{testing} di applicazioni Android è possibile emulare un dispositivo con gli 
+            strumenti offerti dallo strumento di sviluppo Android Studio e installare l'applicazione su questo \textit{device} 
+            virtuale. Il problema di questo strumento è che richiede computer con prestazioni molto alte per funzionare 
+            in maniera fluida altrimenti rischia di paralizzare l'elaboratore. Non sono sicuro che sia utilizzato dagli 
+            sviluppatori di {\company} quindi ho evitato di includerlo nelle tecnologie utilizzate;
+      \item \textbf{Collaborazione e gestione del codice}: Bitbucket viene utilizzato come piattaforma per depositare il codice 
+            sorgente e gestire lo sviluppo collaborativo. Qui gli sviluppatori caricano il loro 
+            codice suddiviso in \textit{repository} per ogni progetto. Ogni \textit{repository} vede diversi 
+            \textit{branch} attivi: \textbf{\textit{main}} che contiene l'ultima versione rilasciata al pubblico del software, 
+            \textbf{\textit{develop}} ovvero il \textit{branch} di lavoro dove nascono e confluiscono tutti i 
+            \textit{feature branch} prima di effettuare il rilascio in \textit{main}, i \textbf{\textit{feature branch}} che 
+            viene creato dal programmatore per sviluppare una specifica funzione del programma che sarà, una volta 
+            terminata e testata, aggiunta in \textit{develop};
+      \item \textbf{Gestione dei progetti}: Jira è una piattaforma particolarmente utile per pianificare i vari 
+            compiti da svolgere nello \textit{sprint} e assegnarli ai vari componenti del \textit{team} di sviluppatori. 
+            Questi compiti sono chiamati \textit{ticket} e possono essere di diverso tipo: \textbf{\textit{epic}} che rappresentano 
+            grosse porzioni di lavoro e sono quindi usate come raccolte di \textit{ticket}, \textbf{\textit{task}} il singolo 
+            compito che deve essere completato e \textbf{\textit{bug}} che rappresenta una problematica da risolvere.
+            I \textbf{\textit{bug}} possono essere avere diverse origini: gli sviluppatori stessi nel caso in cui si accorgano 
+            di un difetto di programmazione o da i clienti che telefonando all'assistenza riportano il problema, 
+            quindi il tecnico riporterà la problematica al \textit{project manager} che creerà la \textit{task}. Jira offre inoltre 
+            molti altri strumenti per la gestione di metodologie Agile come la possibilità di creare diagrammi di Gantt, che 
+            permettono di avere una rappresentazione visiva delle attività programmate nel tempo, aiutando il \textit{team} 
+            a comprendere meglio la sequenza delle attività, o la definizione di un \textit{backlog}, ovvero una lista con le task 
+            rimaste incompiute durante gli \textit{sprint} precedenti;
 \end{itemize}
