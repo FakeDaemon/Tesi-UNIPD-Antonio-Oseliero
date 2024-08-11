@@ -6,7 +6,7 @@ dallo studio dall'architettura del \textit{database}.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[alt={Database di MoviORDER}, width=0.7\textwidth]{img/database.png}
+    \includegraphics[alt={\textit{Database} di MoviORDER}, width=0.7\textwidth]{img/database.png}
     \caption {\textit{Database} di MoviORDER.}
     \label{fig:database}
 \end{figure}
@@ -131,7 +131,7 @@ ATIS.DAL.Base
 
                         TODO SCRIVERE E SISTEMARE, REPOSITORY PATTERN 
 
-Nel contesto dello sviluppo software, il pattern Repository è un'importante astrazione per la gestione delle operazioni di accesso ai dati. Le interfacce IReadOnlyRepository<TContext>, IRepository<TContext>, e IBaseService<TContext, TEntity> implementano questo pattern, fornendo un'architettura che separa la logica di accesso ai dati dalle operazioni di business. Queste interfacce permettono di gestire in modo efficiente le operazioni di lettura, scrittura, aggiornamento ed eliminazione delle entità all'interno di un contesto (TContext) che estende DbContext.
+Nel contesto dello sviluppo \textit{software}, il pattern Repository è un'importante astrazione per la gestione delle operazioni di accesso ai dati. Le interfacce IReadOnlyRepository<TContext>, IRepository<TContext>, e IBaseService<TContext, TEntity> implementano questo pattern, fornendo un'architettura che separa la logica di accesso ai dati dalle operazioni di business. Queste interfacce permettono di gestire in modo efficiente le operazioni di lettura, scrittura, aggiornamento ed eliminazione delle entità all'interno di un contesto (TContext) che estende DbContext.
 
 Interfaccia IReadOnlyRepository<TContext>
 L'interfaccia IReadOnlyRepository<TContext> definisce operazioni di sola lettura sulle entità di un database. Tramite i metodi offerti, è possibile recuperare singole entità o insiemi di entità, basandosi su criteri di filtro opzionali. Ad esempio, il metodo GetQueryable<TEntity> restituisce un oggetto IQueryable<TEntity> che permette di costruire query personalizzate, mentre GetById consente di recuperare un'entità specifica tramite il suo identificatore. I metodi asincroni (GetByIdAsync, GetExistsAsync) sono essenziali per migliorare le prestazioni in contesti dove la reattività dell'applicazione è cruciale.
@@ -175,10 +175,10 @@ migliorando la manutenibilità e la scalabilità del progetto.\\
 La \textit{repository} è suddivisa nelle seguenti cartelle:
 \begin{itemize}
     \item \textbf{Android}: specifica per React Native, contiene i file di configurazione 
-          per la versione Android dell'app e \textit{file} come \texttt{build.gradle} e \texttt{AndroidManifest.xml} 
+          per la versione Android dell'\textit{app} e \textit{file} come \texttt{build.gradle} e \texttt{AndroidManifest.xml} 
           per la configurazione del compilatore Android;
     \item \textbf{iOS}: specifica per React Native, contiene il progetto Xcode e i file di configurazione 
-          per la versione iOS dell'app e \textit{file} per la configurazione del compilatore di iOS;
+          per la versione iOS dell'\textit{app} e \textit{file} per la configurazione del compilatore di iOS;
     \item \textbf{lang}: contiene i \textit{file} \texttt{en.json e it.json} che contiene il testo usato nell'applicazione 
           in italiano e inglese;
     \item \textbf{src}: contiene tutto il codice del \textit{front-end} e realizza l'architettura \textit{component 
@@ -197,10 +197,10 @@ La \textit{repository} è suddivisa nelle seguenti cartelle:
                   Definisce come il codice deve essere trasformato per essere compatibile con le varie versioni di JavaScript e i 
                   diversi ambienti in cui verrà eseguito.
             \item \textbf{\texttt{index.js}} index.js: Punto d'ingresso principale dell'applicazione React Native. Qui viene 
-                  avviato il rendering del componente radice dell'app, generalmente importando e registrando il componente 
+                  avviato il rendering del componente radice dell'\textit{app}, generalmente importando e registrando il componente 
                   principale.
-            \item App.tsx: Contiene il componente radice dell'applicazione. Qui vengono definiti l'interfaccia utente principale 
-                  e la logica di base dell'app.
+            \item app.tsx: Contiene il componente radice dell'applicazione. Qui vengono definiti l'interfaccia utente principale 
+                  e la logica di base dell'\textit{app}.
             \item tsconfig.json: Configura il compilatore TypeScript, specificando le opzioni di compilazione e il comportamento del transpiling del codice TypeScript in JavaScript.
           \end{itemize}
 \end{itemize}

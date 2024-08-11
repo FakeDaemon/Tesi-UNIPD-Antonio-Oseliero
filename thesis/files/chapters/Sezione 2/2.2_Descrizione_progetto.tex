@@ -1,27 +1,44 @@
 \section{Descrizione progetto}
-{\movi} come descritto nel capitolo \ref{chap:Tecnologie} è un'applicazione che le aziende forniscono ai loro clienti 
-permettendogli di visualizzare il catalogo di prodotti offerti dall'azienda e di creare quindi gli ordini per il \textit{restock} 
+
+\begin{figure}[h!]
+      \centering
+      \subfloat[Schermata \textit{tablet} della \textit{homepage} di {\movi}]{
+          \includegraphics[width=0.45\textwidth]{img/MVOR_originale.png}
+          \label{fig:MVOR originale}
+      }
+      \hfill
+      \subfloat[Schermata \textit{smartphone} della schermata prodotti di {\movi}]{
+          \includegraphics[width=0.3\textwidth]{img/MVOR_prodotti.jpg}
+          \label{fig:MVOR prodotti}
+      }
+      \caption{Schermate di {\movi}}
+      \label{fig:MVOR schermate}
+\end{figure}
+
+{\movi}, la cui \textit{homepage} è mostrata in figura \ref{fig:MVOR originale}, come descritto nel capitolo \ref{chap:Tecnologie} 
+è un'applicazione che le aziende forniscono ai loro clienti 
+permettendo loro di visualizzare il catalogo di prodotti (figura \ref{fig:MVOR prodotti}) offerti dall'azienda e di creare quindi gli ordini per il \textit{restock} 
 della merce. Questa applicazione permette di \textbf{vedere lo storico degli ordini} effettuati dal cliente, \textbf{visualizzare il 
-set tipico} (ovvero un ordine predefinito creato inserendo tutti i prodotti solitamente acquistati dal cliente nelle rispettive quantità), 
+\textit{set} tipico} (ovvero un ordine predefinito creato inserendo tutti i prodotti solitamente acquistati dal cliente nelle rispettive quantità), 
 \textbf{creare un ordine} con i prodotti offerti dal fornitore, visualizzare un \textbf{carrello} di riepilogo dell'ordine e uno \textbf{storico} che 
 contiene tutti i documenti generati a seguito della conferma dell'ordine.\\
-Quello che richiede il progetto assegnatomi da {\company} è di sviluppare un modulo per {\movi} chiamato "Modulo Agenti", ovvero 
-l'insieme di interfacce, funzioni, \gls{api}, ecc. che permette l'autenticazione di un nuovo tipo di utente, ovvero gli agenti aziendali, 
-che selezionando da una lista uno dei clienti a lui assegnati permette di operare nell'app come il cliente selezionato.\\
-La necessità di implementare questo modulo nasce da alcuni bisogni segnalati da i suoi clienti a {\company} e che 
-mi sono stati descritti durante il primo incontro in azienda con il tutor aziendale, i principali motivi sono:
+Il progetto assegnatomi da {\company} richiede di sviluppare un modulo per {\movi} chiamato "Modulo Agenti", ovvero 
+l'insieme di interfacce, funzioni, \gls{api}, ecc. che permette l'autenticazione di un nuovo tipo di utente, gli agenti aziendali, 
+i quali, selezionando da una lista uno dei clienti a loro assegnati, possono operare nell'\textit{app} come il cliente selezionato.\\
+La necessità di implementare questo modulo nasce da alcuni bisogni segnalati dai suoi clienti a {\company} e che 
+mi sono stati descritti durante il primo incontro in azienda con il \textit{tutor} aziendale. I principali motivi sono:
 \begin{itemize}
-    \item \textbf{MoviSELL, l'app pensata per gli agenti aziendali, è disponibile solo per tablet iOS}. Questo può costituire un problema 
-          per alcune aziende che, per dotare i propri agenti dell'app, sono obbligate ad acquistare questi tablet per i propri agenti. 
+    \item \textbf{MoviSELL, l'\textit{app} pensata per gli agenti aziendali, è disponibile solo per \textit{tablet} iOS}. Questo può costituire un problema 
+          per alcune aziende che, per dotare i propri agenti dell'\textit{app}, sono obbligate ad acquistare questi \textit{tablet} per i propri agenti. 
           Per aziende con agenti plurimandatari, cioè che rappresentano più aziende contemporaneamente, questo requisito si 
-          rivela essere particolarmente oneroso da soddisfare dato che si richiede di fornire i tablet non ai propri dipendenti, 
+          rivela essere particolarmente oneroso da soddisfare, dato che si richiede di fornire i \textit{tablet} non ai propri dipendenti, 
           ma a professionisti esterni;
-    \item \textbf{Non tutti gli agenti si trovano a loro agio ad usare il tablet}, trovandolo ingombrante e scomodo, soprattutto per chi 
+    \item \textbf{Non tutti gli agenti si trovano a loro agio ad usare il \textit{tablet}}, trovandolo ingombrante e scomodo, soprattutto per chi 
           lavora molto in mobilità. Pertanto, avere un'alternativa per smartphone risulta preferibile.
-    \item MoviSELL è un'app ricca di funzionalità, ma può risultare di difficile utilizzo per chi non ha dimestichezza con gli 
-          strumenti digitali. \textbf{{\movi} risulta molto più semplice e intuitiva rimuovendo la barriera tecnologica per alcuni 
+    \item MoviSELL è un'\textit{app} ricca di funzionalità, ma può risultare di difficile utilizzo per chi non ha dimestichezza con gli 
+          strumenti digitali. \textbf{{\movi} risulta molto più semplice e intuitiva, rimuovendo la barriera tecnologica per alcuni 
           agenti} e permettendo loro di svolgere il loro lavoro;
     \item Alcuni clienti preferiscono contattare direttamente gli agenti per effettuare i loro ordini, invece di usare {\movi}. 
           \textbf{Il modulo agenti semplifica l'operazione di creazione dell'ordine per gli agenti}, evitando loro di dover appuntare 
-          la merce da ordinare e poi effettuare l'ordine dal computer una volta rientrati in ufficio.
+          la merce da ordinare e poi effettuare l'ordine dal \textit{computer} una volta rientrati in ufficio.
 \end{itemize}
