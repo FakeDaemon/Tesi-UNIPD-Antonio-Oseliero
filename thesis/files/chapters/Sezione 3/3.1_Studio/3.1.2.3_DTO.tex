@@ -1,0 +1,28 @@
+\subsubsection{DTO}\label{chap:dto}
+L'utilizzo diretto dei modelli come classi \textit{standard} presenta due criticità:
+\begin{itemize}
+    \item \textbf{Vulnerabilità nella sicurezza dei dati}: la creazione di istanze dirette dei modelli può esporre 
+          involontariamente informazioni sensibili. Un esempio è la tabella \texttt{User} del \textit{common database}, 
+          dove tra gli attributi troviamo la \texttt{password} dell'utente. L'utilizzo di queste 
+          istanze potrebbe portare alla divulgazione accidentale di dati riservati in parti dell'applicazione dove 
+          non sono necessari;
+    \item \textbf{Limitazioni nella flessibilità strutturale}: i modelli generati rispecchiano fedelmente la struttura 
+        del \textit{database}, ma spesso sono richieste rappresentazioni dei dati più sofisticate o personalizzate. 
+          In molti casi, è preferibile definire classi che aggregano o rielaborano dati provenienti da più modelli, 
+          offrendo una rappresentazione più adatta alle esigenze funzionali dell'applicazione.
+\end{itemize}
+Ecco perché vengono introdotti i DTO (\textit{Data Transfer Object}).\\
+Essenzialmente, sono contenitori di dati privi di logica di \textit{business}, progettati per trasportare informazioni tra i 
+componenti del sistema. Tipicamente contengono solo proprietà pubbliche, senza implementare comportamenti complessi, 
+permettendo di controllare precisamente quali dati vengono esposti e trasferiti, migliorando significativamente la 
+sicurezza del sistema.\\
+Questo è particolarmente importante per proteggere informazioni sensibili, come \textit{password} o altri dati riservati, 
+che possono essere omessi o mascherati.\\
+L'utilizzo dei DTO incrementa anche la manutenibilità del codice, introducendo un livello di astrazione tra la 
+struttura del \textit{database} e la logica applicativa. Questo disaccoppiamento facilita la manutenzione e 
+l'evoluzione del codice, permettendo modifiche alla struttura del \textit{database} o alla \textit{business logic} 
+senza impattare direttamente le interfacce esposte.\\
+Quello dei DTO non è un vero e proprio \textit{layer}, ma come mostrato in figura \ref{fig:repository-service} agisce 
+da ponte tra il \textit{presentation layer} e il \textit{business layer}, in quest'ultimo infatti viene gestita la 
+mappatura dei DTO al corrispondente modello in modo da poter convertire un modello in DTO e viceversa.
+È possibile anche mappare tra loro i DTO in modo da avere una gestione profonda del passaggio delle informazioni.

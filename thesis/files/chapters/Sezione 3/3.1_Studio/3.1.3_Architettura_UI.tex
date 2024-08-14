@@ -1,0 +1,54 @@
+\subsection{Architettura Front-end}
+                                          TODO SCRIVERE MEGLIO E GRAFICO
+Infine ho studiato l'architettura del \textit{front-end}.\\
+{\movi} come la maggior parte delle applicazioni React è strutturata secondo un'architettura chiamata \textit{component 
+based}, che favorisce la modularità e il riutilizzo del codice.\\
+Per componente in questo contesto intendiamo un gruppo di funzionalità correlate che risiede dietro un'interfaccia ben definita.
+L'organizzazione del codice in questa architettura viene strutturato dividendo le varie parti per aree tematiche, 
+migliorando la manutenibilità e la scalabilità del progetto.\\
+La \textit{repository} è suddivisa nelle seguenti cartelle:
+\begin{itemize}
+    \item \textbf{Android}: specifica per React Native, contiene i file di configurazione 
+          per la versione Android dell'\textit{app} e \textit{file} come \texttt{build.gradle} e \texttt{AndroidManifest.xml} 
+          per la configurazione del compilatore Android;
+    \item \textbf{iOS}: specifica per React Native, contiene il progetto Xcode e i file di configurazione 
+          per la versione iOS dell'\textit{app} e \textit{file} per la configurazione del compilatore di iOS;
+    \item \textbf{lang}: contiene i \textit{file} \texttt{en.json e it.json} che contiene il testo usato nell'applicazione 
+          in italiano e inglese;
+    \item \textbf{src}: contiene tutto il codice del \textit{front-end} e realizza l'architettura \textit{component 
+          based} che sarà descritta in seguito;
+    \item \textbf{\textit{file} di varia natura nella root della \textit{repository}}: questi \textit{file} sono fondamentali 
+          per garantire un corretto funzionamento e una gestione efficiente del progetto, qui riporto quelli più importanti:
+          \begin{itemize}
+            \item \textbf{\texttt{package.json}}: contiene le informazioni sul progetto come \textbf{nome del progetto, versione,
+                  script di comando e dipendenze}. È il file principale per gestire i pacchetti Node.js utilizzati nel progetto;
+            \item \textbf{\texttt{yarn.lock}}: questo file viene generato automaticamente quando si genera il progetto e 
+                  permette di gestire ed installare le dipendenze del progetto con le loro versioni esatte;
+            \item \textbf{\texttt{metro.config.js}}: configurazione di Metro, il \textit{bundler} di JavaScript predefinito 
+                  per React Native. Questo file permette di personalizzare il comportamento di Metro, come 
+                  l'aggiunta di alias, path customizzati, o l'esclusione di determinati file dalla build.
+            \item \textbf{\texttt{babel.config.js}} babel.config.js: Configura Babel, il transpiler di JavaScript. 
+                  Definisce come il codice deve essere trasformato per essere compatibile con le varie versioni di JavaScript e i 
+                  diversi ambienti in cui verrà eseguito.
+            \item \textbf{\texttt{index.js}} index.js: Punto d'ingresso principale dell'applicazione React Native. Qui viene 
+                  avviato il rendering del componente radice dell'\textit{app}, generalmente importando e registrando il componente 
+                  principale.
+            \item app.tsx: Contiene il componente radice dell'applicazione. Qui vengono definiti l'interfaccia utente principale 
+                  e la logica di base dell'\textit{app}.
+            \item tsconfig.json: Configura il compilatore TypeScript, specificando le opzioni di compilazione e il comportamento del transpiling del codice TypeScript in JavaScript.
+          \end{itemize}
+\end{itemize}
+
+Descriviamo ora ogni area della cartella src,
+\begin{itemize}
+      \item Cartella components": Contiene componenti riutilizzabili e generici, suddivisi ulteriormente in sottocartelle come "ui" per elementi dell'interfaccia utente e "layout" per strutture di pagina comuni.
+      \item Cartella "pages" o "views": Ospita componenti che rappresentano intere pagine o viste principali dell'applicazione.
+      \item Cartella "services": Contiene moduli per la gestione delle chiamate API e la logica di business condivisa.
+      \item Cartella "hooks": Raccoglie hook personalizzati per la gestione dello stato e della logica riutilizzabile.
+      \item Cartella "context" o "store": Dedicata alla gestione dello stato globale dell'applicazione, sia utilizzando il Context API di React che soluzioni come Redux.
+      \item Cartella "utils" o "helpers": Per funzioni di utilità e helper condivisi in tutta l'applicazione.
+      \item Cartella "assets": Per risorse statiche come immagini, font e file di stile globali.
+\end{itemize}
+Questa organizzazione per aree facilita la navigazione nel codice e promuove una chiara separazione delle responsabilità. 
+React utilizza un flusso di dati unidirezionale, dove le informazioni fluiscono dall'alto verso il basso attraverso le 
+proprietà (props), mentre lo stato dell'applicazione è gestito attraverso soluzioni di gestione dello stato.
