@@ -1,54 +1,85 @@
-\subsection{Architettura Front-end}
-                                          TODO SCRIVERE MEGLIO E GRAFICO
-Infine ho studiato l'architettura del \textit{front-end}.\\
-{\movi} come la maggior parte delle applicazioni React è strutturata secondo un'architettura chiamata \textit{component 
-based}, che favorisce la modularità e il riutilizzo del codice.\\
-Per componente in questo contesto intendiamo un gruppo di funzionalità correlate che risiede dietro un'interfaccia ben definita.
-L'organizzazione del codice in questa architettura viene strutturato dividendo le varie parti per aree tematiche, 
-migliorando la manutenibilità e la scalabilità del progetto.\\
+\subsection{\textit{Front-end}}
+\subsubsection{\textit{Root} della \textit{repository} e \textit{file} di configurazione}
+
+\begin{figure}[H]
+      \centering
+      %\hspace{-3.25cm} % Sposta la figura a sinistra di n cm
+      \includegraphics[width=0.6\textwidth]{img/architettura_ui.png}
+      \caption{\textit{Root} della \textit{repository} che contiene il \textit{front-end}}
+      \label{fig:ui architecture}
+\end{figure}
+
+Infine ho studiato React Native e l'architettura utilizzata per il \textit{front-end}.\\
+Prima di descrivere l'architettura soffermiamoci ad analizzare il contenuto del \textit{root} della \textit{repository} 
+mostrata dalla figura \ref{fig:ui architecture}.
+Qui sono contenuti i file di configurazione di React Native e le impostazioni dei compilatori.\\
 La \textit{repository} è suddivisa nelle seguenti cartelle:
 \begin{itemize}
-    \item \textbf{Android}: specifica per React Native, contiene i file di configurazione 
+    \item \texttt{\textbf{Android}}: specifica per React Native, contiene i file di configurazione 
           per la versione Android dell'\textit{app} e \textit{file} come \texttt{build.gradle} e \texttt{AndroidManifest.xml} 
           per la configurazione del compilatore Android;
-    \item \textbf{iOS}: specifica per React Native, contiene il progetto Xcode e i file di configurazione 
+    \item \texttt{\textbf{iOS}}: specifica per React Native, contiene il progetto Xcode e i file di configurazione 
           per la versione iOS dell'\textit{app} e \textit{file} per la configurazione del compilatore di iOS;
-    \item \textbf{lang}: contiene i \textit{file} \texttt{en.json e it.json} che contiene il testo usato nell'applicazione 
-          in italiano e inglese;
-    \item \textbf{src}: contiene tutto il codice del \textit{front-end} e realizza l'architettura \textit{component 
-          based} che sarà descritta in seguito;
-    \item \textbf{\textit{file} di varia natura nella root della \textit{repository}}: questi \textit{file} sono fondamentali 
+    \item \texttt{\textbf{lang}}: contiene i \textit{file} \texttt{en.json e it.json} che definiscono il testo usato nell'
+          applicazione nelle lingue italiano e inglese;
+    \item \texttt{\textbf{src}}: contiene tutto il codice del \textit{front-end} e realizza l'architettura modulare;
+    \item \textbf{Altri \textit{file} di configurazione}: questi \textit{file} sono fondamentali 
           per garantire un corretto funzionamento e una gestione efficiente del progetto, qui riporto quelli più importanti:
           \begin{itemize}
-            \item \textbf{\texttt{package.json}}: contiene le informazioni sul progetto come \textbf{nome del progetto, versione,
-                  script di comando e dipendenze}. È il file principale per gestire i pacchetti Node.js utilizzati nel progetto;
-            \item \textbf{\texttt{yarn.lock}}: questo file viene generato automaticamente quando si genera il progetto e 
-                  permette di gestire ed installare le dipendenze del progetto con le loro versioni esatte;
-            \item \textbf{\texttt{metro.config.js}}: configurazione di Metro, il \textit{bundler} di JavaScript predefinito 
-                  per React Native. Questo file permette di personalizzare il comportamento di Metro, come 
-                  l'aggiunta di alias, path customizzati, o l'esclusione di determinati file dalla build.
-            \item \textbf{\texttt{babel.config.js}} babel.config.js: Configura Babel, il transpiler di JavaScript. 
+            \item \textbf{\texttt{package.json}}: contiene le informazioni sul progetto come il nome del progetto, versione,
+                  \textit{script} di comando e dipendenze. È il \textit{file} principale per gestire i pacchetti Node.js utilizzati nel progetto;
+            \item \textbf{\texttt{yarn.lock}}: questo \textit{file} viene generato automaticamente quando si genera il progetto e 
+                  permette di gestire ed installare le dipendenze con le loro versioni esatte;
+            \item \textbf{\texttt{metro.config.js}}: configura Metro, il \textit{bundler} di JavaScript predefinito 
+                  per React Native. Un \textit{bundler} è uno strumento di sviluppo \textit{software} che combina diversi 
+                  \textit{file} di codice sorgente e le loro dipendenze in uno o più \textit{file} ottimizzati, pronti per essere distribuiti 
+                  o eseguiti in un ambiente di produzione. Questo \textit{file} permette di personalizzare il comportamento di Metro, come 
+                  l'aggiunta di alias, path customizzati, o l'esclusione di determinati \textit{file} dalla \textit{build}.
+            \item \textbf{\texttt{babel.config.js}}: configura Babel, il \textit{transpiler} di JavaScript. 
                   Definisce come il codice deve essere trasformato per essere compatibile con le varie versioni di JavaScript e i 
                   diversi ambienti in cui verrà eseguito.
-            \item \textbf{\texttt{index.js}} index.js: Punto d'ingresso principale dell'applicazione React Native. Qui viene 
-                  avviato il rendering del componente radice dell'\textit{app}, generalmente importando e registrando il componente 
-                  principale.
-            \item app.tsx: Contiene il componente radice dell'applicazione. Qui vengono definiti l'interfaccia utente principale 
-                  e la logica di base dell'\textit{app}.
-            \item tsconfig.json: Configura il compilatore TypeScript, specificando le opzioni di compilazione e il comportamento del transpiling del codice TypeScript in JavaScript.
+            \item \textbf{\texttt{index.js}}: punto d'ingresso principale dell'applicazione React Native. Qui viene 
+                  avviato il \textit{rendering} del componente radice dell'\textit{app};
+            \item \textbf{\texttt{app.tsx}}: contiene il componente radice dell'applicazione. Qui vengono definiti l'interfaccia 
+                  utente principale e la logica di base dell'\textit{app}.
+            \item \textbf{\texttt{tsconfig.json}}: configura il compilatore TypeScript, specificando le opzioni di compilazione 
+            e il comportamento del \textit{transpiling} del codice TypeScript in JavaScript.
           \end{itemize}
 \end{itemize}
+\subsubsection{Architettura modulare}
 
-Descriviamo ora ogni area della cartella src,
+\begin{figure}[H]
+      \centering
+      %\hspace{-3.25cm} % Sposta la figura a sinistra di n cm
+      \includegraphics[width=0.8\textwidth]{img/modules_architecture.png}
+      \caption{Rappresentazione dell'architettura modulare per {\movi}}
+      \label{fig:frontend architecture}
+\end{figure}
+
+L'applicazione implementa un'architettura modulare, un approccio di progettazione \textit{software} che, come mostra 
+la figura \ref{fig:frontend architecture}, separa le 
+funzionalità in moduli indipendenti e intercambiabili. Questa architettura è particolarmente adatta alle applicazioni 
+React Native, consentendo una maggiore flessibilità, manutenibilità e scalabilità del codice.
+I moduli sono:
 \begin{itemize}
-      \item Cartella components": Contiene componenti riutilizzabili e generici, suddivisi ulteriormente in sottocartelle come "ui" per elementi dell'interfaccia utente e "layout" per strutture di pagina comuni.
-      \item Cartella "pages" o "views": Ospita componenti che rappresentano intere pagine o viste principali dell'applicazione.
-      \item Cartella "services": Contiene moduli per la gestione delle chiamate API e la logica di business condivisa.
-      \item Cartella "hooks": Raccoglie hook personalizzati per la gestione dello stato e della logica riutilizzabile.
-      \item Cartella "context" o "store": Dedicata alla gestione dello stato globale dell'applicazione, sia utilizzando il Context API di React che soluzioni come Redux.
-      \item Cartella "utils" o "helpers": Per funzioni di utilità e helper condivisi in tutta l'applicazione.
-      \item Cartella "assets": Per risorse statiche come immagini, font e file di stile globali.
+      \item \textbf{Moduli di \textit{presentation}}: le componenti grafiche che realizzano l'interfaccia dell'\textit{app}. 
+            Per favorire la riusabilità del codice sono divise in due cartelle \texttt{View} e \texttt{Component}. In 
+            \texttt{Component} vengono definiti i componenti e il loro stile, che vengono usati per comporre le viste 
+            definiti in \texttt{View} che contengono anche la logica dei componenti che la compongono;
+      \item \textbf{Modulo logico}: contiene la logica di \textit{business} dell'applicazione, è contenuto nella 
+            cartella \texttt{Controller};
+      \item \textbf{Modulo di accesso ai dati}: contiene la definizione degli \textit{endpoint} che permettono la 
+            connessione alle \gls{api} e la gestione della memoria locale del dispositivo, è contenuto nella cartella 
+            \texttt{Services};
+      \item \textbf{Modulo di gestione dello stato}: centralizza la gestione dello stato utilizzando 
+            la libreria React Native Redux, è contenuto nella cartella \texttt{Store};
+      \item \textbf{Modulo di navigazione}: gestisce il \textit{routing} e la navigazione tra le diverse 
+            schermate dell'\textit{app}, implementato tramite la libreria React Native Navigation è 
+            contenuto nella cartella \texttt{Navigation};
+      \item \textbf{Moduli di supporto}: diviso in tre \textit{directory}: \texttt{Types} dove sono 
+            definiti i tipi usati all'interno dell'applicazione, \texttt{Assets} dove sono raccolte 
+            le risorse statiche (come le immagini, le icone, ecc.) e \texttt{Settings} dove sono definiti 
+            i temi chiaro e scuro dell'\textit{app}.
 \end{itemize}
-Questa organizzazione per aree facilita la navigazione nel codice e promuove una chiara separazione delle responsabilità. 
-React utilizza un flusso di dati unidirezionale, dove le informazioni fluiscono dall'alto verso il basso attraverso le 
-proprietà (props), mentre lo stato dell'applicazione è gestito attraverso soluzioni di gestione dello stato.
+Questo approccio si adatta bene alla natura \textit{component-based} di React Native, permettendo una chiara 
+separazione delle responsabilità e una struttura del codice organizzata e intuitiva.
