@@ -1,27 +1,25 @@
-\subsubsection{\textit{Business logic layer e service pattern}}
-Il \textit{business layer} in {\movi} implementa il \textit{service pattern}.
-Il \textit{service pattern} è un modello di progettazione \textit{software} che separa la logica di \textit{business} dell'
-applicazione dal resto del sistema.\\
-Nel contesto di {\movi}, il Il \textit{service pattern} è implementato nel \textit{business layer} 
-e funge da intermediario tra il \textit{layer} di presentazione (\textit{API Controllers}) e il \textit{data access layer}.
-Il \textit{service pattern} è implementato principalmente attraverso un componente chiave: \texttt{BaseService<TContext, TEntity>} 
+\subsubsection{\textit{Business Logic layer e Service Pattern}}
+
+Il \textit{Business Logic layer} in {\movi} implementa il \textit{Service Pattern}, un modello di progettazione 
+\textit{software} che separa la logica di \textit{business} dal resto del sistema. Questo \textit{patter} funge 
+da intermediario tra il \textit{layer} di presentazione (\textit{API Controllers}) e il \textit{Data Access layer}.\\
+Il \textit{Service Pattern} è implementato principalmente attraverso un componente chiave: \texttt{BaseService<TContext, TEntity>} 
 che gestisce il flusso di dati, definisce le operazioni CRUD e incapsula la logica dei servizi.\\
 I servizi sono classi concrete che estendono \texttt{BaseService} ed implementano la logica di \textit{business} 
-e vengono richiamati dagli \textit{API Controllers} del livello superiore.
-Utilizzando questo \textit{pattern} i servizi nascondono la logica e rendono modulare il servizio, implementano inoltre la gestione 
-degli errori e permettono di mappare i dati dello strato precedente in DTO (vedi capitolo \ref{chap:dto}).
-L'implementazione del \textit{service pattern} offre diversi vantaggi:
+che viene richiamata dagli \textit{API Controllers} del livello superiore.\\
+Questo approccio offre diversi vantaggi:
 \begin{itemize}
-\item \textbf{Separazione delle Responsabilità}: La logica di \textit{business} è chiaramente separata dalla logica di 
-      presentazione e di accesso ai dati.
-\item \textbf{Riusabilità}: La logica di \textit{business} incapsulata nei servizi può essere facilmente riutilizzata 
-      in diverse parti dell'applicazione.
-\item \textbf{Manutenibilità}: La struttura modulare facilita la manutenzione e l'estensione del codice.
-\item \textbf{Testabilità}: L'uso di interfacce e iniezione delle dipendenze rende il codice altamente testabile.
+\item \textbf{Separazione delle Responsabilità}: la logica di \textit{business} è chiaramente distinta dalla 
+      presentazione e dall'accesso ai dati;
+\item \textbf{Riusabilità}: le funzionalità incapsulate nei servizi sono facilmente riutilizzabili in diverse 
+      parti dell'applicazione;
+\item \textbf{Manutenibilità}: la struttura modulare facilita la manutenzione e l'estensione del codice;
 \end{itemize}
-In questo \textit{layer} vengono implementati anche meccanismi di sicurezza, tramite la definizione di un \textit{token} 
-che viene creato al momento dell'autenticazione dell'utente e gli viene passato come risposta dalla \gls{api} di \textit{login} 
-e contiene criptate al suo interno alcune informazioni riguardo l'utente.\\
-In conclusione, il \textit{business layer} e il \textit{service pattern} in {\movi} forniscono una robusta struttura 
-per l'implementazione della logica di \textit{business}, agendo come un ponte efficace tra il layer di presentazione e il 
-\textit{layer} di accesso ai dati, garantendo al contempo modularità, riusabilità e manutenibilità del codice.
+I servizi gestiscono anche gli errori e mappano i dati in DTO (vedi capitolo \ref{chap:dto}), aumentando la 
+modularizzazione.\\
+In questo \textit{layer} sono implementati meccanismi di sicurezza basati su \textit{token}. Generato all'autenticazione 
+dell'utente, il \textit{token} contiene informazioni criptate utilizzate per verificare identità e permessi ad ogni richiesta 
+successiva, garantendo un accesso sicuro alle risorse dell'applicazione.\\
+In conclusione, il \textit{Business layer} e il \textit{Service Pattern} in {\movi} forniscono una struttura robusta 
+per l'implementazione della logica di \textit{business}, fungendo da ponte efficace tra presentazione e accesso ai 
+dati, e assicurando modularità, riusabilità e manutenibilità del codice.
