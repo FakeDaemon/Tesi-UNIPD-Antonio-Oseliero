@@ -1,5 +1,5 @@
 \subsection{Struttura del \textit{database}}\label{chap:struttura database}
-La prima fase chiamata "Studio degli applicativi e del \textit{database}", come introdotto nel capitolo \ref{chap:vincoli temporali}, 
+La prima fase chiamata "Studio degli applicativi e del \textit{database}", come introdotto dal capitolo \ref{chap:vincoli temporali}, 
 vede come obiettivo lo studio delle tecnologie, del codice e del \textit{database} utilizzato dall'applicazione. Ho cominciato quindi 
 dallo studio dall'architettura del \textit{database}.\\
 
@@ -10,12 +10,12 @@ dallo studio dall'architettura del \textit{database}.\\
     \label{fig:database}
 \end{figure}
 
-Come illustrato nella figura \ref{fig:database}, l'infrastruttura dati dell'applicazione {\movi} si articola su tre 
+Come illustrato dalla figura \ref{fig:database}, l'infrastruttura dati dell'applicazione {\movi} si articola su tre 
 \textit{database} distinti: \texttt{XXX\_MVOR\_COMMONDB}, e i \textit{database} condivisi con l'applicazione 
 MoviSELL, ovvero \texttt{XXX\_MVSE\_SYS} e \texttt{MVSE\_DEMO}.\\
 \texttt{XXX\_MVOR\_COMMONDB} (che per brevità chiameremo \textit{common database}), contiene i dati relativi a gli utenti di MoviORDER. 
 Esso conserva informazioni necessarie all'applicazione come: credenziali di accesso, stato di validità della licenza, 
-configurazioni dell'interfaccia utente, dettagli del dispositivo, indirizzi email e altri parametri necessari al corretto 
+configurazioni dell'interfaccia utente, dettagli del dispositivo, indirizzi \textit{email} e altri parametri necessari al corretto 
 funzionamento del \textit{software}. Questi dati sono fondamentali per i processi di autenticazione e inizializzazione 
 dell'applicazione.\\
 Ogni azienda ha il proprio \textit{database} dedicato, che chiameremo \textit{company database}, in cui vengono conservati tutti i dati 

@@ -1,18 +1,18 @@
-\subsubsection{Presentation layer e API controller}
-Il \textit{presentation layer} rappresenta lo strato più esterno dell'architettura API di {\movi}, fungendo da interfaccia 
+\subsubsection{Presentation layer e API Controller}
+Il \textit{Presentation layer} rappresenta lo strato più esterno dell'architettura API di {\movi}, fungendo da interfaccia 
 tra il sistema \textit{back-end} e il \textit{front-end}. Questo livello è implementato principalmente attraverso gli 
 \textit{API Controller}, che sono responsabili della gestione delle richieste HTTP in ingresso e della formattazione 
 delle risposte.\\
 Questi \textit{controller} agiscono come punto di ingresso per le richieste \textit{client}, orchestrando il flusso 
-di dati e le operazioni tra il \textit{client} e il \textit{business logic layer}.\\
+di dati e le operazioni tra il \textit{client} e il \textit{Business Logic layer}.\\
 Le principali responsabilità degli \textit{API Controller} includono:
 \begin{itemize}
     \item \textbf{Gestione delle richieste}: Ricevono e interpretano le richieste HTTP in arrivo.
-    \item \textbf{Routing}: Indirizzano le richieste alle appropriate funzioni del \textit{business logic layer}.
-    \item \textbf{Validazione input}: Verificano la correttezza e la sicurezza dei dati in ingresso.
+    \item \textbf{\textit{Routing}}: Indirizzano le richieste alle appropriate funzioni del \textit{Business Logic layer}.
+    \item \textbf{Validazione \textit{input}}: Verificano la correttezza e la sicurezza dei dati in ingresso.
     \item \textbf{Formattazione risposte}: Preparano e inviano risposte HTTP appropriate utilizzando i DTO.
 \end{itemize}
-Gli \textit{API Controller} interagiscono direttamente con il \textit{business logic layer}, in particolare con i 
+Gli \textit{API Controller} interagiscono direttamente con il \textit{Business Logic layer}, in particolare con i 
 servizi che vengono richiamati direttamente nel corpo del \textit{controller}.\\
 Tutte le \gls{api} a parte quella per il \textit{login} non possono essere interrogate da un utente non autenticato 
 (ovvero che non ha completato la procedura di \textit{login} e che non possiede un \textit{token} valido), in modo 
@@ -25,7 +25,7 @@ All'interno della cartella dove sono definiti i \textit{controller} troviamo ino
     \item \textbf{Definizione degli \textit{endpoint}}: ovvero gli indirizzi di connessione ai vari \textit{database} 
           e l'indirizzo in cui le \gls{api} vengono esposte.
 \end{itemize}
-In conclusione, il \textit{presentation layer} e gli \textit{API Controller} in {\movi} fungono da interfaccia 
+In conclusione, il \textit{Presentation layer} e gli \textit{API Controller} in {\movi} fungono da interfaccia 
 tra il mondo esterno e la logica interna dell'applicazione. Attraverso una progettazione attenta e l'uso di DTO, questo 
 \textit{layer} garantisce una comunicazione efficiente, sicura e flessibile con il \textit{front-end}, mantenendo al 
 contempo una chiara separazione delle responsabilità all'interno dell'architettura complessiva del sistema.

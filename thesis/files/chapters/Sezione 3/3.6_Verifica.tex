@@ -1,0 +1,34 @@
+\section{Verifica}
+Nella penultima fase del tirocinio mi sono concentrato nel \textit{testing} dell'applicazione. {\company} non utilizza 
+strumenti per la verifica automatica del codice, e ho quindi testato manualmente tutte le componenti del sistema e la 
+corretta integrazione del modulo agenti.\\
+Tuttavia, per mia iniziativa e in accordo con il \textit{tutor} aziendale, ho deciso di implementare una \textit{suite} di 
+\textit{test} automatici per le funzioni della \textit{business logic} delle \textit{API} utilizzando il \textit{framework} 
+Moq.\\
+Moq è uno strumento per la creazione di \textit{mock} e \textit{stub} in \textit{unit test} 
+e \textit{integration test}. Permette di simulare il comportamento di oggetti e componenti esterni al codice che si sta 
+testando, sostituendoli con implementazioni fittizie ma controllabili. Nello specifico, Moq consente di:
+\begin{itemize}
+    \item \textbf{Creare \textit{mock} di interfacce e classi concrete}, in modo da poter testare il codice in modo isolato 
+          senza dipendere dalle reali implementazioni.
+    \item \textbf{Definire aspettative sui metodi chiamati sui \textit{mock}}, verificando che il codice sotto \textit{test} 
+          interagisca correttamente con i componenti dipendenti.
+    \item \textbf{Restituire valori predefiniti o simulare comportamenti complessi sui \textit{mock}}, in modo da poter testare 
+          diverse casistiche.
+\end{itemize}
+Con l'utilizzo di Moq, ho potuto creare \textit{mock} dei servizi e dei \textit{repository} utilizzati dalle \textit{API}, 
+simulando il comportamento dei componenti dipendenti senza dover effettivamente invocarli. Questo mi ha permesso di testare 
+in modo isolato le singole funzioni della \textit{Business Logic}, verificandone il corretto funzionamento indipendentemente 
+dall'integrazione con il resto del sistema.\\
+La prima difficoltà che ho incontrato in questa fase è stata la creazione di oggetti \textit{mock} particolarmente 
+complessi, dovuta alla natura complessa degli oggetti utilizzati dalla logica di \textit{business} delle \gls{api} che 
+stavo testando. Inoltre, la versione gratuita di Moq non mi permetteva di simulare il comportamento di metodi non pubblici 
+e virtuali, costringendomi a modificare la firma di alcune funzioni.\\
+Sebbene questo non rappresenti l'approccio ideale per l'implementazione di \textit{test} unitari, ho comunque deciso di 
+cambiare la firma delle funzioni. La mia motivazione principale era quella di dimostrare l'efficacia dei \textit{test} 
+automatici nell'individuare e prevenire problemi di funzionamento, nonostante i vincoli tecnici incontrati.\\
+Ho anche provato ad implementare una serie di \textit{test} automatici per le funzioni del \textit{front-end}, ma ho 
+preferito dare priorità alla stesura della documentazione, e ho quindi rinunciato.\\
+L'adozione di questa pratica di \textit{testing}, sebbene non fosse inizialmente prevista dal processo di 
+sviluppo dell'azienda, è stata molto apprezzata dal \textit{tutor} aziendale. Egli ha riconosciuto il valore aggiunto che 
+questa scelta ha comportato in termini di qualità e robustezza del prodotto.
