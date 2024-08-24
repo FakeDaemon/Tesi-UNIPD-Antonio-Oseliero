@@ -2,6 +2,7 @@
 minted-caches/
 
 # file
+da_fare.txt
 *.DS_Store
 *.xmpi
 *.acn
