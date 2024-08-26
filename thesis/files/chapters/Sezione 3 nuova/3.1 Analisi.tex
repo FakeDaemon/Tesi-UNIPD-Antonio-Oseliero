@@ -1,0 +1,111 @@
+\section{Analisi}
+
+L'analisi del progetto è un'attività cruciale nello sviluppo di qualsiasi sistema \textit{software}. Essa fornisce le 
+fondamenta su cui si basa l'intero processo di sviluppo, definendo chiaramente i requisiti e le aspettative 
+del sistema. Questa fase non è un processo statico, ma un'attività dinamica che evolve e si raffina continuamente durante 
+l'intero ciclo di vita del progetto.\\
+È fondamentale sottolineare che l'analisi non si conclude con l'inizio dell'attività di codifica. Al contrario, 
+è un processo iterativo che viene costantemente raffinato man mano che emergono nuove informazioni o si incontrano sfide 
+impreviste durante lo sviluppo. Questo approccio permette di adattarsi alle mutevoli esigenze del progetto e 
+garantisce che il prodotto finale soddisfi le aspettative del cliente.
+
+\subsection{Casi d'uso}
+
+Un'attività fondamentale durante l'analisi del progetto è la definizione dei casi d'uso. Essi descrivono le interazioni tra gli utenti 
+(o altri sistemi esterni) e il sistema in esame, illustrando come questo debba comportarsi per 
+soddisfare le esigenze degli \textit{stakeholder}.\\
+Per definire i casi d'uso, ho condotto un'attenta lettura del capitolato e svolto molteplici interviste con il \textit{tutor} 
+aziendale. Il risultato di questo processo è una serie di casi d'uso, illustrati dalla figura \ref{fig:uc}.
+
+\begin{figure}[H]
+    \vspace{2em}
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/use_cases.png}
+    \caption{\textit{Use Cases} modellati per il progetto}
+    \label{fig:uc}
+\end{figure}
+
+Questa attività di modellazione mi ha permesso di comprendere meglio le funzionalità richieste per il 
+modulo agenti e di individuare necessità implicite.\\
+Nella modellazione dei casi d'uso vengono riportate diverse informazioni, come le condizioni richieste prima e dopo 
+il caso d'uso, una descrizione, scenario e attori coinvolti.\\
+Per comprendere i requisiti che ho riportato nel prossimo capitolo, riporto una descrizione dei tre attori principali, 
+ovvero le entità (umani o altri sistemi) che interagiscono il sistema:
+\begin{itemize}
+    \item \textbf{Utente non autenticato}: utente che non ha completato la procedura di \textit{login}, 
+          può essere un cliente o un agente;
+    \item \textbf{Agente}: utente autenticato e riconosciuto dal sistema come agente aziendale;
+    \item \textbf{Agente autenticato come cliente}: agente che ha selezionato un cliente e vuole operare all'interno dell'\textit{app} 
+          come il cliente selezionato.
+\end{itemize}
+
+\subsection{Requisiti funzionali e non funzionali}
+L'analisi dei casi d'uso permette l'identificazione e la definizione dei requisiti funzionali e non funzionali del progetto.\\
+I requisiti funzionali descrivono le funzionalità specifiche che il sistema deve offrire, dettagliando il comportamento atteso 
+in risposta alle diverse interazioni degli utenti. 
+I requisiti non funzionali, d'altra parte, definiscono le caratteristiche qualitative del sistema, come prestazioni, 
+sicurezza, usabilità e scalabilità. Sebbene non sempre esplicitamente evidenti nei casi d'uso, questi requisiti 
+sono spesso impliciti nelle aspettative degli utenti. In alcuni casi le necessità che portano a descrivere questi requisiti 
+non sono proprio modellabili come casi d'uso (come la necessità di fornire la documentazione sul 
+progetto), pertanto la definizione dei requisiti si rivela essere un lavoro complesso quanto essenziale.\\
+Il numero di requisiti soddisfatti rispetto a quelli concordati permette di avere una misura della qualità del 
+lavoro svolto.\\
+Ho assegnato ad ogni requisito un codice identificativo, che riporta:
+\begin{itemize}
+    \item \textbf{F, V, Q, U}: F rappresenta i requisiti funzionali, V i requisiti non funzionali di vincolo, Q i 
+          requisiti non funzionali qualitativi e U i 
+          requisiti non funzionali di usabilità;
+    \item \textbf{O, D}: O per i requisiti obbligatori, D per quelli desiderabili;
+    \item \textbf{id}: numero identificativo del requisito;
+\end{itemize}
+Per ogni requisito viene fornita anche una descrizione e la fonte da cui è tratto.
+Le fonti che ho riportato nella tabella indicano da dove ho ricavato il requisito descritto, troviamo:
+\begin{itemize}
+    \item \textbf{UC}: il requisito descritto è stato ricavato da un caso d'uso;
+    \item \textbf{Capitolato}: il requisito descritto è stato ricavato dal capitolato del progetto;
+    \item \textbf{\textit{Tutor}}: il requisito descritto è stato ricavato da colloqui avuti con il \textit{tutor} aziendale 
+          durante il tirocinio;
+    \item \textbf{Studente}: il requisito descritto è stato ricavato da personali considerazioni sul progetto.
+\end{itemize}
+La tabella \ref{tab:requisiti} riporta l'elenco dei requisiti che ho individuato e che ho concordato con il \textit{tutor}:
+
+\input{chapters/Sezione 3 nuova/3.1/req_funz_nuova.tex}
+
+Di seguito riporto una tabella che riepiloga i requisiti precedentemente descritti.
+
+\begin{center}
+    \rowcolors{1}{}{tableGray}
+    \begin{longtable}{|>{\centering\arraybackslash}p{2.25cm}|>{\centering\arraybackslash}p{4.75cm}|>{\centering\arraybackslash}p{4.75cm}|>{\centering\arraybackslash}p{2.25cm}|}    \hline
+    \multicolumn{1}{|c|}{\textbf{Tipologia}} & \multicolumn{1}{c|}{\textbf{Obbligatorio}} & \multicolumn{1}{c|}{\textbf{Desiderabile}} & \multicolumn{1}{c|}{\textbf{Totale}}\\ 
+    \hline 
+    \endfirsthead
+    \rowcolor{white}
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Tipologia}} & \multicolumn{1}{c|}{\textbf{Obbligatorio}} & \multicolumn{1}{c|}{\textbf{Desiderabile}} & \multicolumn{1}{c|}{\textbf{Totale}}\\ \hline 
+    \endhead
+    \hline
+    \rowcolor{white}
+    \multicolumn{4}{|r|}{{Continua nella prossima pagina...}}\\
+    \hline
+    \endfoot
+    \endlastfoot 
+
+    % Insert your table rows here
+    \textbf{Funzionale} & 13 & 17 & 30 \\
+    \textbf{Di vincolo} & 3 & 0 & 3 \\
+    \textbf{Qualitativi} & 2 & 0 & 2 \\
+    \textbf{Usabilità} & 5 & 6 & 11 \\
+    \textbf{Totale} & 23 & 23 & 46 \\
+
+    \hline
+    \hiderowcolors
+    \caption{Riepilogo requisti}
+    \label{tab:requisiti riassuntos}
+    \end{longtable}
+\end{center}
+
+
+
+
+
